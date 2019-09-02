@@ -57,7 +57,7 @@ set backspace=2
 set nowrap
 set noshowmode
 set list
-set listchars=tab:».,trail:.,nbsp:#,extends:»,precedes:«
+set listchars=tab:»‧,trail:•,nbsp:★,extends:»,precedes:«
 set guicursor=
 set cursorline
 set mouse=
