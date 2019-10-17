@@ -28,6 +28,7 @@ Plugin 'neovimhaskell/haskell-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'samsaga2/vim-z80'
+Plugin 'leafo/moonscript-vim'
 
 " Fennel (git@github.com:bakpakin/Fennel)
 Plugin 'bakpakin/fennel.vim'            
