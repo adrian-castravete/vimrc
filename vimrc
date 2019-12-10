@@ -19,6 +19,7 @@ Plugin 'majutsushi/tagbar'              " Tags manager (``')
 Plugin 'ap/vim-css-color'               " Colour colour definitions (ex: #55aaff)
 Plugin 'rking/ag.vim'                   " Silver searcher (`:Ag')
 Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
+Plugin 'wellle/context.vim'             " Current context
 
 " File types
 Plugin 'plasticboy/vim-markdown'
