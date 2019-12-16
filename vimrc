@@ -117,7 +117,7 @@ set wildignore+=*.pyc
 " ------------
 augroup wipetrailing
 autocmd!
-autocmd BufWritePre *.py,*.c,*.js,*.coffee,*.lua,*.fnl,*.fennel,*.clj,*.cljs,*.cljc :%s/\s+$//e
+autocmd BufWritePre *.py,*.c,*.js,*.coffee,*.lua,*.fnl,*.fennel,*.clj,*.cljs,*.cljc :%s/\s\+$//e
 augroup END
 
 augroup customtabstops
@@ -158,6 +158,7 @@ endfunction
 
 " Other
 " -----
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|__pycache__\|pyc'
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
