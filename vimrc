@@ -84,15 +84,7 @@ highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
 " Keyboard mappings
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
-nnoremap <F2>   :bprevious<cr>
-nnoremap <F3>   :bnext<cr>
-nnoremap <F4>   :buffers<cr>:buffer<space>
-nnoremap <F5>   :tabnew<cr>
-nnoremap <F6>   :tabprevious<cr>
-nnoremap <F7>   :tabnext<cr>
-nnoremap <F8>   :tabnew<space>
-nnoremap <F9>   :silent make<cr>:redraw!<cr>
-nnoremap <F12>  :bw<cr>:vsp<cr>:bn<cr>
+nnoremap <F5>   :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
 nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
