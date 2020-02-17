@@ -84,6 +84,8 @@ highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
 " Keyboard mappings
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
+nnoremap <S-F2>   :bp<cr>
+nnoremap <S-F3>   :bn<cr>
 nnoremap <F5>   :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
 nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
@@ -115,7 +117,7 @@ augroup END
 augroup customtabstops
 autocmd!
 autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :set ts=8 sw=8 noet
-autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.js,*.yaml :set ts=2 sw=2 et
+autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html :set ts=2 sw=2 et
 autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :set ts=4 sw=4 et
 autocmd FileType make :set ts=8 sw=8 noet
 augroup END
@@ -160,3 +162,4 @@ if executable('ag')
 else
   set grepprg=git\ grep\ --untracked\ --no-color\ -EIne
 endif
+let g:netrw_keepdir = 0
