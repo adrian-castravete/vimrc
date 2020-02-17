@@ -8,7 +8,6 @@ filetype off
 call vundle#begin()
 " General
 Plugin 'ryanoasis/vim-devicons'         " Beautiful icons
-Plugin 'itchyny/lightline.vim'          " Status line
 Plugin 'airblade/vim-gitgutter'         " Gutter markers for git modifications
 Plugin 'easymotion'                     " Movement plugin (`\\')
 Plugin 'mhinz/vim-startify'             " Awesome startup screen (`:Startify')
@@ -16,6 +15,7 @@ Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'MattesGroeger/vim-bookmarks'    " Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'            " Context highlighter
 Plugin 'majutsushi/tagbar'              " Tags manager (``')
+Plugin 'itchyny/lightline.vim'          " Status line
 Plugin 'ap/vim-css-color'               " Colour colour definitions (ex: #55aaff)
 Plugin 'rking/ag.vim'                   " Silver searcher (`:Ag')
 Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
@@ -127,11 +127,17 @@ augroup END
 
 " ### Lightline ###
 let g:lightline = {
+\   'active': {
+\     'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ], [ 'tagbar' ] ],
+\   },
 \   'colorscheme': 'seoul256',
+\   'component': {
+\     'tagbar': '%{tagbar#currenttag("%s", "", "f")}',
+\   },
 \   'component_function': {
 \     'filetype': 'LightLineFileType',
 \     'fileformat': 'LightLineFileFormat',
-\   }
+\   },
 \ }
 
 " ### Parinfer ###
@@ -139,6 +145,9 @@ let g:vim_parinfer_filetypes = ["fennel"]
 
 " ### Rainbow ###
 let g:rainbow_active = 0
+
+" ### Context ###
+let g:context_enabled = 0
 
 " Functions
 " ---------
