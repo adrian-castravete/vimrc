@@ -32,7 +32,7 @@ Plugin 'samsaga2/vim-z80'
 Plugin 'leafo/moonscript-vim'
 
 " Fennel (git@github.com:bakpakin/Fennel)
-Plugin 'bakpakin/fennel.vim'            
+Plugin 'bakpakin/fennel.vim'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
@@ -84,8 +84,7 @@ highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
 " Keyboard mappings
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
-nnoremap <S-F2>   :bp<cr>
-nnoremap <S-F3>   :bn<cr>
+nnoremap <C-O>  :bn<cr>
 nnoremap <F5>   :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
 nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
