@@ -40,7 +40,6 @@ filetype plugin indent on
 set autochdir
 set hlsearch
 set encoding=utf8
-set expandtab
 set shiftwidth=8
 set tabstop=8
 set backspace=2
@@ -66,6 +65,8 @@ highlight DiffAdd       cterm=reverse   ctermbg=15  ctermfg=2
 highlight DiffDelete    cterm=reverse   ctermbg=15  ctermfg=1
 highlight DiffChange    cterm=reverse   ctermbg=15  ctermfg=3
 highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
+
+colorscheme mydefault
 
 " Keyboard mappings
 " -----------------
