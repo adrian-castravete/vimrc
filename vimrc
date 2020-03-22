@@ -25,6 +25,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'samsaga2/vim-z80'
 Plugin 'leafo/moonscript-vim'
 Plugin 'sentientmachine/Pretty-Vim-Python'
+Plugin 'marcuscf/vim-lua'
 
 " Fennel (git@github.com:bakpakin/Fennel)
 Plugin 'bakpakin/fennel.vim'
