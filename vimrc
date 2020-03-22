@@ -76,6 +76,7 @@ nnoremap <F5>   :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
 nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
+nnoremap gb     :call SynStack()<cr>
 
 " Unicode
 " -------
@@ -122,3 +123,13 @@ let g:context_enabled = 0
 
 " ### Others ###
 let g:netrw_keepdir = 0
+
+" Functions
+" ---------
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfunc
