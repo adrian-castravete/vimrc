@@ -21,6 +21,7 @@ highlight DiffDelete	cterm=reverse	ctermbg=15	ctermfg=1
 highlight DiffChange	cterm=reverse	ctermbg=15	ctermfg=3
 highlight DiffText	cterm=reverse	ctermbg=15	ctermfg=8
 
+highlight Builtin	cterm=italic			ctermfg=12
 highlight Comment	cterm=italic			ctermfg=2
 highlight Constant					ctermfg=13
 highlight Identifier	cterm=bold			ctermfg=10

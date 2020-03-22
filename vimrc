@@ -24,6 +24,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'samsaga2/vim-z80'
 Plugin 'leafo/moonscript-vim'
+Plugin 'sentientmachine/Pretty-Vim-Python'
 
 " Fennel (git@github.com:bakpakin/Fennel)
 Plugin 'bakpakin/fennel.vim'
@@ -103,9 +104,9 @@ augroup END
 
 augroup customtabstops
 autocmd!
-autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :set ts=8 sw=8 noet
-autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html :set ts=2 sw=2 et
-autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :set ts=4 sw=4 et
+autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
+autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html :setlocal ts=2 sw=2 et
+autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
 autocmd FileType make :set ts=8 sw=8 noet
 augroup END
 
