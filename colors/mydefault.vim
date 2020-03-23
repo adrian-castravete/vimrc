@@ -11,10 +11,13 @@ set fillchars=vert:│,fold:─,stl:━,stlnc:─
 
 highlight Normal			ctermbg=NONE	ctermfg=11
 highlight NonText			ctermbg=NONE	ctermfg=8
+highlight ColorColumn	cterm=reverse	ctermbg=15	ctermfg=8
+highlight Search	cterm=bold	ctermbg=3	ctermfg=15
 highlight SpecialKey			ctermbg=NONE	ctermfg=8
 highlight StatusLine	cterm=bold	ctermbg=NONE	ctermfg=8
 highlight StatusLineNC	cterm=NONE	ctermbg=NONE	ctermfg=8
 highlight VertSplit	cterm=NONE	ctermbg=NONE	ctermfg=8
+highlight Visual	cterm=NONE	ctermbg=7	ctermfg=0
 
 highlight DiffAdd	cterm=reverse	ctermbg=15	ctermfg=2
 highlight DiffDelete	cterm=reverse	ctermbg=15	ctermfg=1

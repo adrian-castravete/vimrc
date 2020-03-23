@@ -50,8 +50,9 @@ set noshowmode
 set list
 set listchars=tab:»‧,trail:•,nbsp:★,extends:»,precedes:«
 set guicursor=
-"set cursorline
-set mouse=
+set cursorline
+set mouse=a
+set colorcolumn=80,100,120
 
 syntax enable
 
@@ -59,7 +60,8 @@ syntax enable
 " -------
 set background=dark
 "colorscheme seoul256
-set laststatus=2
+"set laststatus=2
+
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 
