@@ -38,7 +38,7 @@ filetype plugin indent on
 
 " My settings
 " ===========
-"set t_Co=256
+set t_Co=256
 set autochdir
 set hlsearch
 set encoding=utf8
