@@ -59,8 +59,6 @@ syntax enable
 " Colours
 " -------
 set background=dark
-"colorscheme seoul256
-"set laststatus=2
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -110,6 +108,7 @@ autocmd!
 autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
 autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html :setlocal ts=2 sw=2 et
 autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
+autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 autocmd FileType make :set ts=8 sw=8 noet
 augroup END
 
