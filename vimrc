@@ -18,6 +18,7 @@ Plugin 'wellle/context.vim'             " Current context
 " File types
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'kchmck/vim-coffee-script'
