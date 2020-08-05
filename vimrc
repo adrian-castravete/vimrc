@@ -59,7 +59,7 @@ syntax enable
 
 " Colours
 " -------
-set background=dark
+set background=light
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -69,7 +69,7 @@ highlight DiffDelete    cterm=reverse   ctermbg=15  ctermfg=1
 highlight DiffChange    cterm=reverse   ctermbg=15  ctermfg=3
 highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
 
-colorscheme mydefault
+"colorscheme mydefault
 
 " Keyboard mappings
 " -----------------
@@ -125,6 +125,9 @@ let g:rainbow_active = 0
 
 " ### Context ###
 let g:context_enabled = 0
+
+" ### Markdown-Preview ###
+let g:vim_markdown_preview_github = 1
 
 " ### Others ###
 let g:netrw_keepdir = 0
