@@ -11,7 +11,7 @@ Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'MattesGroeger/vim-bookmarks'    " Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'            " Context highlighter
 Plugin 'majutsushi/tagbar'              " Tags manager (``')
-Plugin 'rking/ag.vim'                   " Silver searcher (`:Ag')
+Plugin 'mileszs/ack.vim'                " Silver searcher (`:Ack')
 Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'             " Current context
 
@@ -33,7 +33,7 @@ Plugin 'bakpakin/fennel.vim'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
-Plugin 'adrian-castravete/vim-parinfer'
+"Plugin 'adrian-castravete/vim-parinfer'
 call vundle#end()
 filetype plugin indent on
 
@@ -75,11 +75,16 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-nnoremap <F5>   :buffers<cr>:buffer<space>
+nnoremap <C-P>  :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
-nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
+"nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
+
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " Unicode
 " -------
@@ -116,6 +121,9 @@ augroup END
 
 " Plugin specific configuration
 " -----------------------------
+
+" ### Ack ###
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 " ### Parinfer ###
 let g:vim_parinfer_filetypes = ["fennel"]
