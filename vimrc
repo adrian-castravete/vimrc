@@ -11,7 +11,7 @@ Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'MattesGroeger/vim-bookmarks'    " Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'            " Context highlighter
 Plugin 'majutsushi/tagbar'              " Tags manager (``')
-Plugin 'mileszs/ack.vim'                " Silver searcher (`:Ack')
+Plugin 'mileszs/ack.vim'                " Searcher (`:Ack')
 Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'             " Current context
 
@@ -78,18 +78,14 @@ nnoremap <C-O>  :bn<cr>
 nnoremap <C-P>  :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
 "nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
+nnoremap <C-G>  :AckGit <cword><cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
-
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
 
 " Unicode
 " -------
 if !exists("g:startup_finished") || !g:startup_finished
-  set encoding=utf-8
+	set encoding=utf-8
 endif
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,latin1
@@ -105,18 +101,18 @@ set wildignore+=*.pyc
 " Autocommands
 " ------------
 augroup wipetrailing
-autocmd!
-autocmd BufWritePre *.py,*.c,*.js,*.coffee,*.lua,*.fnl,*.fennel,*.clj,*.cljs,*.cljc :%s/\s\+$//e
+	autocmd!
+	autocmd BufWritePre *.py,*.c,*.js,*.coffee,*.lua,*.fnl,*.fennel,*.clj,*.cljs,*.cljc :%s/\s\+$//e
 augroup END
 
 augroup customtabstops
-autocmd!
-autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
-autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
-autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
-autocmd BufNewFile,BufReadPre,BufCreate *.lua :setlocal ts=3 sw=3 noet
-autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel :setlocal ts=2 sw=2 et
-autocmd FileType make :set ts=8 sw=8 noet
+	autocmd!
+	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.lua :setlocal ts=3 sw=3 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel :setlocal ts=2 sw=2 et
+	autocmd FileType make :set ts=8 sw=8 noet
 augroup END
 
 " Plugin specific configuration
@@ -140,9 +136,17 @@ let g:netrw_keepdir = 0
 " Functions
 " ---------
 function! SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  let l:s = synID(line('.'), col('.'), 1)
-  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+	if !exists("*synstack")
+		return
+	endif
+	let l:s = synID(line('.'), col('.'), 1)
+	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfunc
+
+function! FindGitRoot()
+	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunc
+
+" Commands
+" --------
+command! -nargs=1 AckGit execute "Ack! <args> " . FindGitRoot()
