@@ -1,15 +1,15 @@
 set background=dark
-highlight clear
+"highlight clear
 
-if exists("syntax_on")
-	syntax reset
-endif
+"if exists("syntax_on")
+"	syntax reset
+"endif
 
 let colors_name = "mydefault"
 
 set fillchars=vert:│,fold:─,stl:━,stlnc:─
 
-highlight Normal			ctermbg=NONE	ctermfg=11
+highlight Normal			ctermbg=NONE
 highlight NonText			ctermbg=NONE	ctermfg=234
 highlight ColorColumn	cterm=reverse	ctermbg=15	ctermfg=234
 highlight Pmenu		cterm=None	ctermbg=236	ctermfg=7
@@ -27,12 +27,12 @@ highlight DiffDelete	cterm=reverse	ctermbg=15	ctermfg=1
 highlight DiffChange	cterm=reverse	ctermbg=15	ctermfg=3
 highlight DiffText	cterm=reverse	ctermbg=15	ctermfg=8
 
-highlight Builtin	cterm=italic			ctermfg=12
-highlight Comment	cterm=italic			ctermfg=2
-highlight Constant					ctermfg=13
-highlight Identifier	cterm=bold			ctermfg=10
-highlight Number					ctermfg=14
-highlight PreProc					ctermfg=10
-highlight Statement					ctermfg=15
-highlight String					ctermfg=9
-highlight Type		cterm=bold			ctermfg=15
+"highlight Builtin	cterm=italic			ctermfg=12
+"highlight Comment	cterm=italic			ctermfg=2
+"highlight Constant					ctermfg=13
+"highlight Identifier	cterm=bold			ctermfg=10
+"highlight Number					ctermfg=14
+"highlight PreProc					ctermfg=10
+"highlight Statement					ctermfg=15
+"highlight String					ctermfg=9
+"highlight Type		cterm=bold			ctermfg=15

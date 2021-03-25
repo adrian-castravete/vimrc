@@ -28,6 +28,9 @@ Plugin 'leafo/moonscript-vim'
 Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'marcuscf/vim-lua'
 
+" Wombat 256 colorscheme
+Plugin 'wombat256.vim'
+
 " Fennel (git@github.com:bakpakin/Fennel)
 Plugin 'bakpakin/fennel.vim'
 
@@ -49,7 +52,7 @@ set backspace=2
 set nowrap
 set noshowmode
 set list
-set listchars=tab:»*,trail:•,nbsp:★,extends:»,precedes:«
+set listchars=tab:»·,trail:•,nbsp:★,extends:»,precedes:«
 set guicursor=
 set cursorline
 set mouse=a
@@ -69,6 +72,7 @@ highlight DiffDelete    cterm=reverse   ctermbg=15  ctermfg=1
 highlight DiffChange    cterm=reverse   ctermbg=15  ctermfg=3
 highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
 
+colorscheme wombat256mod
 colorscheme mydefault
 
 " Keyboard mappings
