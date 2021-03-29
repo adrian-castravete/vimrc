@@ -21,6 +21,7 @@ highlight StatusLine	cterm=bold	ctermbg=NONE	ctermfg=8
 highlight StatusLineNC	cterm=NONE	ctermbg=NONE	ctermfg=8
 highlight VertSplit	cterm=NONE	ctermbg=NONE	ctermfg=8
 highlight Visual	cterm=NONE	ctermbg=7	ctermfg=0
+highlight SignColumn			ctermbg=NONE	ctermfg=NONE
 
 highlight DiffAdd	cterm=reverse	ctermbg=15	ctermfg=2
 highlight DiffDelete	cterm=reverse	ctermbg=15	ctermfg=1

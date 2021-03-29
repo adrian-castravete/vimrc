@@ -8,12 +8,15 @@ filetype off
 call vundle#begin()
 " General
 Plugin 'tpope/vim-fugitive'             " Git commands
+Plugin 'airblade/vim-gitgutter'         " Git gutter
+"Plugin 'aghareza/vim-gitgrep'           " Git grep
 Plugin 'MattesGroeger/vim-bookmarks'    " Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'            " Context highlighter
 Plugin 'majutsushi/tagbar'              " Tags manager (``')
-Plugin 'mileszs/ack.vim'                " Searcher (`:Ack')
 Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'             " Current context
+Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy finder
+Plugin 'lucerion/ctrlp-grep'            " Fuzzy searcher
 
 " File types
 Plugin 'plasticboy/vim-markdown'
@@ -57,6 +60,7 @@ set guicursor=
 set cursorline
 set mouse=a
 set colorcolumn=80,100,120
+set signcolumn=yes
 
 syntax enable
 
@@ -67,11 +71,6 @@ set background=dark
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 
-highlight DiffAdd       cterm=reverse   ctermbg=15  ctermfg=2
-highlight DiffDelete    cterm=reverse   ctermbg=15  ctermfg=1
-highlight DiffChange    cterm=reverse   ctermbg=15  ctermfg=3
-highlight DiffText      cterm=reverse   ctermbg=15  ctermfg=8
-
 colorscheme wombat256mod
 colorscheme mydefault
 
@@ -79,10 +78,9 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-nnoremap <C-P>  :buffers<cr>:buffer<space>
+"nnoremap <C-P>  :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
-"nnoremap <C-G>  :silent grep!<space> -- :/<cr>:cw<cr>
-nnoremap <C-G>  :AckGit <cword><cr>
+nnoremap <C-G>  :CtrlPGrep<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
@@ -121,9 +119,8 @@ augroup END
 
 " Plugin specific configuration
 " -----------------------------
-
-" ### Ack ###
-let g:ackprg = 'ag --vimgrep --smart-case'
+" ### GitGutter ###
+let g:gitgutter_set_sign_backgrounds = 1
 
 " ### Parinfer ###
 let g:vim_parinfer_filetypes = ["fennel"]
@@ -150,7 +147,3 @@ endfunc
 function! FindGitRoot()
 	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunc
-
-" Commands
-" --------
-command! -nargs=1 AckGit execute "Ack! <args> " . FindGitRoot()
