@@ -61,6 +61,13 @@ set cursorline
 set mouse=a
 set colorcolumn=80,100,120
 set signcolumn=yes
+set laststatus=1
+set ruler
+
+" Italics
+" =======
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 syntax enable
 
@@ -113,7 +120,7 @@ augroup customtabstops
 	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.lua :setlocal ts=3 sw=3 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel :setlocal ts=2 sw=2 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R :setlocal ts=2 sw=2 et
 	autocmd FileType make :set ts=8 sw=8 noet
 augroup END
 
@@ -144,6 +151,6 @@ function! SynStack()
 	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfunc
 
-function! FindGitRoot()
-	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunc
+"function! FindGitRoot()
+"	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+"endfunc
