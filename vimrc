@@ -21,7 +21,7 @@ Plugin 'lucerion/ctrlp-grep'            " Fuzzy searcher
 " File types
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+"Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -30,6 +30,7 @@ Plugin 'samsaga2/vim-z80'
 Plugin 'leafo/moonscript-vim'
 Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'marcuscf/vim-lua'
+Plugin 'udalov/kotlin-vim'
 
 " Wombat 256 colorscheme
 Plugin 'wombat256.vim'
@@ -128,6 +129,9 @@ augroup END
 " -----------------------------
 " ### GitGutter ###
 let g:gitgutter_set_sign_backgrounds = 1
+
+" ### VIM markdown
+let g:vim_markdown_folding_disabled = 1
 
 " ### Parinfer ###
 let g:vim_parinfer_filetypes = ["fennel"]
