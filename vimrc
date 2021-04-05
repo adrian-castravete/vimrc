@@ -7,16 +7,17 @@ set rtp+=~/.vim/Vundle.vim
 filetype off
 call vundle#begin()
 " General
-Plugin 'tpope/vim-fugitive'             " Git commands
-Plugin 'airblade/vim-gitgutter'         " Git gutter
-"Plugin 'aghareza/vim-gitgrep'           " Git grep
-Plugin 'MattesGroeger/vim-bookmarks'    " Bookmark plugin (`m*')
-Plugin 'luochen1990/rainbow'            " Context highlighter
-Plugin 'majutsushi/tagbar'              " Tags manager (``')
-Plugin 'chrisbra/unicode.vim'           " Unicode related (`:SearchUnicode')
-Plugin 'wellle/context.vim'             " Current context
-Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy finder
-Plugin 'lucerion/ctrlp-grep'            " Fuzzy searcher
+Plugin 'tpope/vim-fugitive'		" Git commands
+Plugin 'airblade/vim-gitgutter'		" Git gutter
+"Plugin 'aghareza/vim-gitgrep'		" Git grep (disabled in favour of ctrlp-grep)
+Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
+Plugin 'luochen1990/rainbow'		" Context highlighter
+Plugin 'majutsushi/tagbar'		" Tags manager (``')
+Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
+Plugin 'wellle/context.vim'		" Current context
+Plugin 'ctrlpvim/ctrlp.vim'		" Fuzzy finder
+Plugin 'lucerion/ctrlp-grep'		" Fuzzy searcher
+Plugin 'vim-syntastic/syntastic'	" Syntax checker
 
 " File types
 Plugin 'plasticboy/vim-markdown'
@@ -141,6 +142,17 @@ let g:rainbow_active = 0
 
 " ### Context ###
 let g:context_enabled = 0
+
+" ### Syntastic ###
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_mode_map = { "mode": "passive" }
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 " ### Others ###
 let g:netrw_keepdir = 0
