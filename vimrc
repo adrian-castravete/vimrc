@@ -9,15 +9,15 @@ call vundle#begin()
 " General
 Plugin 'tpope/vim-fugitive'		" Git commands
 Plugin 'airblade/vim-gitgutter'		" Git gutter
-"Plugin 'aghareza/vim-gitgrep'		" Git grep (disabled in favour of ctrlp-grep)
 Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'		" Context highlighter
 Plugin 'majutsushi/tagbar'		" Tags manager (``')
 Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'		" Current context
-Plugin 'ctrlpvim/ctrlp.vim'		" Fuzzy finder
-Plugin 'lucerion/ctrlp-grep'		" Fuzzy searcher
 Plugin 'vim-syntastic/syntastic'	" Syntax checker
+Plugin 'mhinz/vim-startify'		" Fancy startup screen
+Plugin 'junegunn/fzf'			" Fuzzy finder
+Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
 
 " File types
 Plugin 'plasticboy/vim-markdown'
@@ -87,9 +87,10 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-"nnoremap <C-P>  :buffers<cr>:buffer<space>
 nnoremap `      :TagbarToggle<cr>
-nnoremap <C-G>  :CtrlPGrep<cr>
+"nnoremap <C-P>  :buffers<cr>:buffer<space>
+nnoremap <C-P>  :Files<cr>
+nnoremap <C-G>  :Rg<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
