@@ -89,8 +89,9 @@ nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
 nnoremap `      :TagbarToggle<cr>
 "nnoremap <C-P>  :buffers<cr>:buffer<space>
-nnoremap <C-P>  :Files<cr>
+nnoremap <C-F>  :Files<cr>
 nnoremap <C-G>  :Rg<cr>
+nnoremap <C-P>  :ProjectFiles<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
@@ -110,6 +111,10 @@ set wildignore+=__pycache__
 set wildignore+=*.egg-info
 set wildignore+=*.pyc
 
+" Commands
+" --------
+command! ProjectFiles execute 'Files' s:FindGitRoot()
+
 " Autocommands
 " ------------
 augroup wipetrailing
@@ -120,7 +125,7 @@ augroup END
 augroup customtabstops
 	autocmd!
 	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py :setlocal ts=4 sw=4 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt :setlocal ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.lua :setlocal ts=3 sw=3 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R :setlocal ts=2 sw=2 et
@@ -168,6 +173,6 @@ function! SynStack()
 	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfunc
 
-"function! FindGitRoot()
-"	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-"endfunc
+function! FindGitRoot()
+	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunc
