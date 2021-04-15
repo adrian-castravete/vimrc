@@ -32,6 +32,7 @@ Plugin 'leafo/moonscript-vim'
 Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'marcuscf/vim-lua'
 Plugin 'udalov/kotlin-vim'
+Plugin 'leafOfTree/vim-vue-plugin'
 
 " Wombat 256 colorscheme
 Plugin 'wombat256.vim'
