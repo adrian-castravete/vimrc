@@ -65,6 +65,7 @@ set colorcolumn=80,100,120
 set signcolumn=yes
 set laststatus=1
 set ruler
+set scroll=6
 
 " Italics
 " =======
@@ -113,7 +114,7 @@ set wildignore+=*.pyc
 
 " Commands
 " --------
-command! ProjectFiles execute 'Files' s:FindGitRoot()
+command! ProjectFiles execute 'Files' FindGitRoot()
 
 " Autocommands
 " ------------
@@ -159,6 +160,10 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" ### FZF ###
+let g:fzf_layout = { 'down': '75%' }
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " ### Others ###
 let g:netrw_keepdir = 0
