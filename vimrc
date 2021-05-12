@@ -90,11 +90,11 @@ colorscheme mydefault
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
 nnoremap `      :TagbarToggle<cr>
-"nnoremap <C-P>  :buffers<cr>:buffer<space>
 nnoremap <C-F>  :Files<cr>
 nnoremap <C-G>  :GFiles<cr>
 nnoremap <C-S>  :Rg<cr>
 nnoremap <C-P>  :ProjectFiles<cr>
+nnoremap <C-B>  :buffers<cr>:buffer<space>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
