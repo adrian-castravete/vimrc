@@ -66,7 +66,7 @@ set colorcolumn=80,100,120
 set signcolumn=yes
 set laststatus=1
 set ruler
-set scroll=6
+set scrolloff=6
 
 " Italics
 " =======
@@ -95,6 +95,7 @@ nnoremap <C-G>  :GFiles<cr>
 nnoremap <C-S>  :Rg<cr>
 nnoremap <C-P>  :ProjectFiles<cr>
 nnoremap <C-B>  :buffers<cr>:buffer<space>
+nnoremap <F6>   :tabnext<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
