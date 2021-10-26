@@ -18,6 +18,7 @@ Plugin 'vim-syntastic/syntastic'	" Syntax checker
 Plugin 'mhinz/vim-startify'		" Fancy startup screen
 Plugin 'junegunn/fzf'			" Fuzzy finder
 Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
+Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
 
 " File types
 Plugin 'plasticboy/vim-markdown'
@@ -34,6 +35,7 @@ Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'marcuscf/vim-lua'
 Plugin 'udalov/kotlin-vim'
 Plugin 'leafOfTree/vim-vue-plugin'
+Plugin 'habamax/vim-godot'
 
 " Wombat 256 colorscheme
 Plugin 'wombat256.vim'
@@ -43,7 +45,7 @@ Plugin 'bakpakin/fennel.vim'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
-"Plugin 'adrian-castravete/vim-parinfer'
+Plugin 'adrian-castravete/vim-parinfer'
 call vundle#end()
 filetype plugin indent on
 
@@ -68,6 +70,7 @@ set signcolumn=yes
 set laststatus=1
 set ruler
 set scrolloff=6
+set modelines=10
 
 " Italics
 " =======
@@ -133,7 +136,9 @@ augroup customtabstops
 	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts :setlocal ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :setlocal ts=3 sw=3 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.script :setlocal ts=3 sw=3 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R,*.vue :setlocal ts=2 sw=2 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.gd :setlocal ts=3 sw=3 noet
 	autocmd FileType make :set ts=8 sw=8 noet
 augroup END
 
