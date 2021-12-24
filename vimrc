@@ -11,7 +11,7 @@ Plugin 'tpope/vim-fugitive'		" Git commands
 Plugin 'airblade/vim-gitgutter'		" Git gutter
 Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'		" Context highlighter
-Plugin 'majutsushi/tagbar'		" Tags manager (``')
+Plugin 'majutsushi/tagbar'		" Tags manager
 Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'		" Current context
 Plugin 'vim-syntastic/syntastic'	" Syntax checker
@@ -19,6 +19,7 @@ Plugin 'mhinz/vim-startify'		" Fancy startup screen
 Plugin 'junegunn/fzf'			" Fuzzy finder
 Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
 Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
+Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
 
 " File types
 Plugin 'plasticboy/vim-markdown'
@@ -93,13 +94,14 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-nnoremap `      :TagbarToggle<cr>
+nnoremap `      :Nuake<cr>
 nnoremap <C-F>  :Files<cr>
 nnoremap <C-G>  :GFiles<cr>
 nnoremap <C-S>  :Rg<cr>
 nnoremap <C-P>  :ProjectFiles<cr>
 nnoremap <C-B>  :buffers<cr>:buffer<space>
 nnoremap <F6>   :tabnext<cr>
+nnoremap <F7>   :Startify<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
 
