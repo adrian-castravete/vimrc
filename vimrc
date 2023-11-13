@@ -6,47 +6,47 @@ set nocompatible
 set rtp+=~/.vim/Vundle.vim
 filetype off
 call vundle#begin()
+" Wombat 256 colorscheme
+Plugin 'wombat256.vim'
+
 " General
-Plugin 'tpope/vim-fugitive'		" Git commands
+"Plugin 'tpope/vim-fugitive'		" Git commands
 Plugin 'airblade/vim-gitgutter'		" Git gutter
-Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
+"Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'		" Context highlighter
 Plugin 'majutsushi/tagbar'		" Tags manager
-Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
+"Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'		" Current context
-Plugin 'vim-syntastic/syntastic'	" Syntax checker
+"Plugin 'vim-syntastic/syntastic'	" Syntax checker
 Plugin 'mhinz/vim-startify'		" Fancy startup screen
 Plugin 'junegunn/fzf'			" Fuzzy finder
 Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
-Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
-Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
+"Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
+"Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
 
 " File types
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'tikhomirov/vim-glsl'
+"Plugin 'neovimhaskell/haskell-vim'
+"Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-python/python-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'samsaga2/vim-z80'
-Plugin 'leafo/moonscript-vim'
-Plugin 'sentientmachine/Pretty-Vim-Python'
+"Plugin 'samsaga2/vim-z80'
+"Plugin 'leafo/moonscript-vim'
+"Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'marcuscf/vim-lua'
-Plugin 'udalov/kotlin-vim'
-Plugin 'leafOfTree/vim-vue-plugin'
-Plugin 'habamax/vim-godot'
-
-" Wombat 256 colorscheme
-Plugin 'wombat256.vim'
+"Plugin 'udalov/kotlin-vim'
+"Plugin 'leafOfTree/vim-vue-plugin'
+"Plugin 'habamax/vim-godot'
 
 " Fennel (git@github.com:bakpakin/Fennel)
-Plugin 'bakpakin/fennel.vim'
+"Plugin 'bakpakin/fennel.vim'
 
 " Clojure
-Plugin 'tpope/vim-fireplace'
-Plugin 'adrian-castravete/vim-parinfer'
+"Plugin 'tpope/vim-fireplace'
+"Plugin 'adrian-castravete/vim-parinfer'
 call vundle#end()
 filetype plugin indent on
 
@@ -94,12 +94,14 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-nnoremap `      :Nuake<cr>
+"nnoremap `      :Nuake<cr>
 nnoremap <C-F>  :Files<cr>
 nnoremap <C-G>  :GFiles<cr>
 nnoremap <C-S>  :Rg<cr>
 nnoremap <C-P>  :ProjectFiles<cr>
 nnoremap <C-B>  :buffers<cr>:buffer<space>
+nnoremap <F2>   :w<cr>
+nnoremap <F5>   :make!<cr>
 nnoremap <F6>   :tabnext<cr>
 nnoremap <F7>   :Startify<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
@@ -138,7 +140,6 @@ augroup customtabstops
 	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts :setlocal ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :setlocal ts=3 sw=3 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.script :setlocal ts=3 sw=3 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R,*.vue :setlocal ts=2 sw=2 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.gd :setlocal ts=3 sw=3 noet
 	autocmd FileType make :set ts=8 sw=8 noet
