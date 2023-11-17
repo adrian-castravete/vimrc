@@ -3,40 +3,47 @@ set nocompatible
 " Vundle
 " ======
 
-set rtp+=~/.vim/Vundle.vim
+if has('win32') || has('win64') || has('win16')
+	set rtp+=~\vimfiles\Vundle.vim
+else
+	set rtp+=~/.vim/Vundle.vim
+endif
 filetype off
 call vundle#begin()
 " Wombat 256 colorscheme
 Plugin 'wombat256.vim'
 
+
 " General
-"Plugin 'tpope/vim-fugitive'		" Git commands
+Plugin 'ctrlpvim/ctrlp.vim'		" Fuzzy File Finder
 Plugin 'airblade/vim-gitgutter'		" Git gutter
-"Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
 Plugin 'luochen1990/rainbow'		" Context highlighter
 Plugin 'majutsushi/tagbar'		" Tags manager
-"Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
 Plugin 'wellle/context.vim'		" Current context
-"Plugin 'vim-syntastic/syntastic'	" Syntax checker
 Plugin 'mhinz/vim-startify'		" Fancy startup screen
-Plugin 'junegunn/fzf'			" Fuzzy finder
-Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
+Plugin 'psliwka/vim-smoothie'		" Smooth scrolling
+"Plugin 'junegunn/fzf'			" Fuzzy finder
+"Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
+"Plugin 'tpope/vim-fugitive'		" Git commands
+"Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
+"Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
+"Plugin 'vim-syntastic/syntastic'	" Syntax checker
 "Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
 "Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
 
 " File types
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'vim-python/python-syntax'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'marcuscf/vim-lua'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
 "Plugin 'tikhomirov/vim-glsl'
 "Plugin 'neovimhaskell/haskell-vim'
 "Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-python/python-syntax'
-Plugin 'Vimjas/vim-python-pep8-indent'
 "Plugin 'samsaga2/vim-z80'
 "Plugin 'leafo/moonscript-vim'
 "Plugin 'sentientmachine/Pretty-Vim-Python'
-Plugin 'marcuscf/vim-lua'
 "Plugin 'udalov/kotlin-vim'
 "Plugin 'leafOfTree/vim-vue-plugin'
 "Plugin 'habamax/vim-godot'
@@ -75,8 +82,10 @@ set modelines=10
 
 " Italics
 " =======
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
+if !(has('win32') || has('win64') || has('win16'))
+	let &t_ZH="\e[3m"
+	let &t_ZR="\e[23m"
+endif
 
 syntax enable
 
@@ -94,18 +103,20 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-"nnoremap `      :Nuake<cr>
-nnoremap <C-F>  :Files<cr>
-nnoremap <C-G>  :GFiles<cr>
 nnoremap <C-S>  :Rg<cr>
-nnoremap <C-P>  :ProjectFiles<cr>
 nnoremap <C-B>  :buffers<cr>:buffer<space>
+nnoremap <F1>   :TagbarToggle<cr>
 nnoremap <F2>   :w<cr>
+nnoremap <F3>   :CtrlP<cr>
 nnoremap <F5>   :make!<cr>
 nnoremap <F6>   :tabnext<cr>
 nnoremap <F7>   :Startify<cr>
 cnoremap w!!    w !sudo tee > /dev/null %
 nnoremap gb     :call SynStack()<cr>
+"nnoremap <C-F>  :Files<cr>
+"nnoremap <C-G>  :GFiles<cr>
+"nnoremap <C-P>  :ProjectFiles<cr>
+"nnoremap `      :Nuake<cr>
 
 " Unicode
 " -------
@@ -174,8 +185,8 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " ### FZF ###
-let g:fzf_layout = { 'down': '75%' }
-let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+"let g:fzf_layout = { 'down': '75%' }
+"let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " ### Others ###
 let g:netrw_keepdir = 0
