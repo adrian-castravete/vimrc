@@ -21,7 +21,7 @@ Plugin 'luochen1990/rainbow'		" Context highlighter
 Plugin 'majutsushi/tagbar'		" Tags manager
 Plugin 'wellle/context.vim'		" Current context
 Plugin 'mhinz/vim-startify'		" Fancy startup screen
-Plugin 'psliwka/vim-smoothie'		" Smooth scrolling
+"Plugin 'psliwka/vim-smoothie'		" Smooth scrolling
 "Plugin 'junegunn/fzf'			" Fuzzy finder
 "Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
 "Plugin 'tpope/vim-fugitive'		" Git commands
@@ -165,10 +165,10 @@ let g:gitgutter_set_sign_backgrounds = 1
 let g:vim_markdown_folding_disabled = 1
 
 " ### Parinfer ###
-let g:vim_parinfer_filetypes = ["fennel"]
+"let g:vim_parinfer_filetypes = ["fennel"]
 
 " ### Rainbow ###
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 
 " ### Context ###
 let g:context_enabled = 0
@@ -178,11 +178,11 @@ let g:context_enabled = 0
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-let g:syntastic_mode_map = { "mode": "passive" }
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_mode_map = { "mode": "passive" }
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 
 " ### FZF ###
 "let g:fzf_layout = { 'down': '75%' }
