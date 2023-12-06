@@ -49,7 +49,7 @@ Plugin 'marcuscf/vim-lua'
 "Plugin 'habamax/vim-godot'
 
 " Fennel (git@github.com:bakpakin/Fennel)
-"Plugin 'bakpakin/fennel.vim'
+Plugin 'bakpakin/fennel.vim'
 
 " Clojure
 "Plugin 'tpope/vim-fireplace'
