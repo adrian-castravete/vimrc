@@ -70,7 +70,6 @@ set nowrap
 set noshowmode
 set list
 set listchars=tab:»·,trail:•,nbsp:★,extends:»,precedes:«
-set guicursor=
 set cursorline
 set mouse=a
 set colorcolumn=80,100,120
@@ -79,12 +78,15 @@ set laststatus=1
 set ruler
 set scrolloff=6
 set modelines=10
+set guioptions=get
+set guicursor=
 
 " Italics
 " =======
 if !(has('win32') || has('win64') || has('win16'))
 	let &t_ZH="\e[3m"
 	let &t_ZR="\e[23m"
+	set guifont=Victor\ Mono\ Medium\ 14
 endif
 
 syntax enable
@@ -148,10 +150,10 @@ augroup END
 augroup customtabstops
 	autocmd!
 	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts :setlocal ts=4 sw=4 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts,*.md,*.markdown :setlocal ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :setlocal ts=3 sw=3 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R,*.vue :setlocal ts=2 sw=2 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R,*.vue,*.rst :setlocal ts=2 sw=2 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.gd :setlocal ts=3 sw=3 noet
 	autocmd FileType make :set ts=8 sw=8 noet
 augroup END
