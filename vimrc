@@ -32,11 +32,12 @@ Plugin 'mhinz/vim-startify'		" Fancy startup screen
 "Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
 
 " File types
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'gabrielelana/vim-markdown'
 Plugin 'vim-python/python-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'marcuscf/vim-lua'
+"Plugin 'plasticboy/vim-markdown'
+"Plugin 'mzlogin/vim-markdown-toc'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
 "Plugin 'tikhomirov/vim-glsl'
 "Plugin 'neovimhaskell/haskell-vim'
@@ -83,7 +84,9 @@ set guicursor=
 
 " Italics
 " =======
-if !(has('win32') || has('win64') || has('win16'))
+if (has('win32') || has('win64') || has('win16'))
+	set guifont=Victor_Mono_Medium:h14
+else
 	let &t_ZH="\e[3m"
 	let &t_ZR="\e[23m"
 	set guifont=Victor\ Mono\ Medium\ 14
