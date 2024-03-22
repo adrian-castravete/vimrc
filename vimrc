@@ -21,6 +21,7 @@ Plugin 'luochen1990/rainbow'		" Context highlighter
 Plugin 'majutsushi/tagbar'		" Tags manager
 Plugin 'wellle/context.vim'		" Current context
 Plugin 'mhinz/vim-startify'		" Fancy startup screen
+Plugin 'ap/vim-css-color'		" CSS color colouring
 "Plugin 'psliwka/vim-smoothie'		" Smooth scrolling
 "Plugin 'junegunn/fzf'			" Fuzzy finder
 "Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
