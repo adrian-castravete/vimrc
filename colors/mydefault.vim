@@ -7,11 +7,11 @@ set background=dark
 
 let colors_name = "mydefault"
 
-set fillchars=vert:│,fold:─,stl:━,stlnc:─
+set fillchars=vert:│,fold:-,stl:=,stlnc:-
 
 highlight Normal			ctermbg=NONE
 highlight NonText			ctermbg=NONE	ctermfg=234
-highlight ColorColumn	cterm=reverse	ctermbg=15	ctermfg=234
+highlight ColorColumn	cterm=reverse	ctermbg=15	ctermfg=234	guibg=#333333
 highlight Pmenu		cterm=NONE	ctermbg=236	ctermfg=7
 highlight PmenuSel	cterm=NONE	ctermbg=238	ctermfg=15
 highlight CursorLine	cterm=NONE	ctermbg=234
