@@ -1,63 +1,55 @@
 set nocompatible
 
-" Vundle
-" ======
-
-if has('win32') || has('win64') || has('win16')
-	set rtp+=~\vimfiles\Vundle.vim
-else
-	set rtp+=~/.vim/Vundle.vim
-endif
 filetype off
-call vundle#begin()
+call plug#begin()
 " Wombat 256 colorscheme
-Plugin 'wombat256.vim'
+Plug 'vim-scripts/wombat256.vim'
 
 
 " General
-Plugin 'ctrlpvim/ctrlp.vim'		" Fuzzy File Finder
-Plugin 'airblade/vim-gitgutter'		" Git gutter
-Plugin 'luochen1990/rainbow'		" Context highlighter
-Plugin 'majutsushi/tagbar'		" Tags manager
-Plugin 'wellle/context.vim'		" Current context
-Plugin 'mhinz/vim-startify'		" Fancy startup screen
-Plugin 'ap/vim-css-color'		" CSS color colouring
-"Plugin 'psliwka/vim-smoothie'		" Smooth scrolling
-"Plugin 'junegunn/fzf'			" Fuzzy finder
-"Plugin 'junegunn/fzf.vim'		" Fuzzy finder VIM
-"Plugin 'tpope/vim-fugitive'		" Git commands
-"Plugin 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
-"Plugin 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
-"Plugin 'vim-syntastic/syntastic'	" Syntax checker
-"Plugin 'tpope/vim-abolish'		" For Subvert (`:%S')
-"Plugin 'Lenovsky/nuake'			" Quake style terminal (``')
+Plug 'ctrlpvim/ctrlp.vim'		" Fuzzy File Finder
+Plug 'airblade/vim-gitgutter'		" Git gutter
+Plug 'luochen1990/rainbow'		" Context highlighter
+Plug 'majutsushi/tagbar'		" Tags manager
+Plug 'wellle/context.vim'		" Current context
+Plug 'mhinz/vim-startify'		" Fancy startup screen
+Plug 'ap/vim-css-color'			" CSS color colouring
+"Plug 'psliwka/vim-smoothie'		" Smooth scrolling
+"Plug 'junegunn/fzf'			" Fuzzy finder
+"Plug 'junegunn/fzf.vim'		" Fuzzy finder VIM
+"Plug 'tpope/vim-fugitive'		" Git commands
+"Plug 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
+"Plug 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
+"Plug 'vim-syntastic/syntastic'		" Syntax checker
+"Plug 'tpope/vim-abolish'		" For Subvert (`:%S')
+"Plug 'Lenovsky/nuake'			" Quake style terminal (``')
 
 " File types
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'vim-python/python-syntax'
-Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'marcuscf/vim-lua'
-Plugin 'vim-scripts/confluencewiki.vim'
-Plugin 'tikhomirov/vim-glsl'
-"Plugin 'plasticboy/vim-markdown'
-"Plugin 'mzlogin/vim-markdown-toc'
-"Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'neovimhaskell/haskell-vim'
-"Plugin 'kchmck/vim-coffee-script'
-"Plugin 'samsaga2/vim-z80'
-"Plugin 'leafo/moonscript-vim'
-"Plugin 'sentientmachine/Pretty-Vim-Python'
-"Plugin 'udalov/kotlin-vim'
-"Plugin 'leafOfTree/vim-vue-plugin'
-"Plugin 'habamax/vim-godot'
+Plug 'gabrielelana/vim-markdown'
+Plug 'vim-python/python-syntax'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'marcuscf/vim-lua'
+Plug 'vim-scripts/confluencewiki.vim'
+Plug 'tikhomirov/vim-glsl'
+"Plug 'plasticboy/vim-markdown'
+"Plug 'mzlogin/vim-markdown-toc'
+"Plug 'JamshedVesuna/vim-markdown-preview'
+"Plug 'neovimhaskell/haskell-vim'
+"Plug 'kchmck/vim-coffee-script'
+"Plug 'samsaga2/vim-z80'
+"Plug 'leafo/moonscript-vim'
+"Plug 'sentientmachine/Pretty-Vim-Python'
+"Plug 'udalov/kotlin-vim'
+"Plug 'leafOfTree/vim-vue-plugin'
+"Plug 'habamax/vim-godot'
 
 " Fennel (git@github.com:bakpakin/Fennel)
-Plugin 'bakpakin/fennel.vim'
+Plug 'bakpakin/fennel.vim'
 
 " Clojure
-"Plugin 'tpope/vim-fireplace'
-"Plugin 'adrian-castravete/vim-parinfer'
-call vundle#end()
+"Plug 'tpope/vim-fireplace'
+Plug 'adrian-castravete/vim-parinfer'
+call plug#end()
 filetype plugin indent on
 
 " My settings
@@ -87,11 +79,11 @@ set guicursor=
 " Italics
 " =======
 if (has('win32') || has('win64') || has('win16'))
-	set guifont=Victor_Mono_Medium:h14
+	set guifont=CodeNewRoman_Nerd_Font_Mono:h12
 else
 	let &t_ZH="\e[3m"
 	let &t_ZR="\e[23m"
-	set guifont=Victor\ Mono\ Medium\ 14
+	set guifont=CodeNewRoman\ Nerd\ Font\ Mono\ 12
 endif
 
 syntax enable
