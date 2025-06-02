@@ -73,8 +73,10 @@ set laststatus=1
 set ruler
 set scrolloff=6
 set modelines=10
-set guioptions=get
 set guicursor=
+if !has('nvim')
+	set guioptions=get
+endif
 
 " Italics
 " =======
