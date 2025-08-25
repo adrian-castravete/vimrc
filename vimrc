@@ -14,9 +14,9 @@ Plug 'majutsushi/tagbar'		" Tags manager
 Plug 'wellle/context.vim'		" Current context
 Plug 'mhinz/vim-startify'		" Fancy startup screen
 Plug 'ap/vim-css-color'			" CSS color colouring
+Plug 'junegunn/fzf'			" Fuzzy finder
+Plug 'junegunn/fzf.vim'			" Fuzzy finder VIM
 "Plug 'psliwka/vim-smoothie'		" Smooth scrolling
-"Plug 'junegunn/fzf'			" Fuzzy finder
-"Plug 'junegunn/fzf.vim'		" Fuzzy finder VIM
 "Plug 'tpope/vim-fugitive'		" Git commands
 "Plug 'MattesGroeger/vim-bookmarks'	" Bookmark plugin (`m*')
 "Plug 'chrisbra/unicode.vim'		" Unicode related (`:SearchUnicode')
@@ -104,7 +104,7 @@ colorscheme mydefault
 " -----------------
 nnoremap <Tab>  :wincmd w<cr>
 nnoremap <C-O>  :bn<cr>
-nnoremap <C-S>  :Rg<cr>
+nnoremap <C-S>  :Ag<cr>
 nnoremap <C-B>  :buffers<cr>:buffer<space>
 nnoremap <F1>   :TagbarToggle<cr>
 nnoremap <F2>   :w<cr>
