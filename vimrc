@@ -48,7 +48,8 @@ Plug 'bakpakin/fennel.vim'
 
 " Clojure
 "Plug 'tpope/vim-fireplace'
-Plug 'adrian-castravete/vim-parinfer'
+"Plug 'adrian-castravete/vim-parinfer'
+Plug 'bhurlow/vim-parinfer'
 call plug#end()
 filetype plugin indent on
 
@@ -148,13 +149,14 @@ augroup END
 
 augroup customtabstops
 	autocmd!
-	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :setlocal ts=8 sw=8 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts,*.md,*.markdown :setlocal ts=4 sw=4 et
-	autocmd BufNewFile,BufReadPre,BufCreate *.moon :setlocal ts=4 sw=4 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :setlocal ts=3 sw=3 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.jinja2,*.jinja,*.html,*.fnl,*.fennel,*.R,*.vue,*.rst :setlocal ts=2 sw=2 et
-	autocmd BufNewFile,BufReadPre,BufCreate *.gd :setlocal ts=3 sw=3 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :set ts=8 sw=8 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts,*.md,*.markdown :set ts=4 sw=4 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.moon :set ts=4 sw=4 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :set ts=3 sw=3 noet
+	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.fnl,*.fennel,*.jinja2,*.jinja,*.html,*.R,*.vue,*.rst :set ts=2 sw=2 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.gd :set ts=3 sw=3 noet
 	autocmd FileType make :set ts=8 sw=8 noet
+	autocmd FileType fennel :set ts=2 sw=2 et fdm=marker fmr=<<<,>>> "isk-=. isk-=:
 augroup END
 
 " Plugin specific configuration
