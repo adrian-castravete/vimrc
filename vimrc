@@ -152,8 +152,7 @@ augroup customtabstops
 	autocmd BufNewFile,BufReadPre,BufCreate *.c,*.cc,*.cpp,*.cxx,*.h,*.asm,*.a :set ts=8 sw=8 noet
 	autocmd BufNewFile,BufReadPre,BufCreate *.json,*.py,*.java,*.kt,*.kts,*.md,*.markdown :set ts=4 sw=4 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.moon :set ts=4 sw=4 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.lua,*.script :set ts=3 sw=3 noet
-	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.fnl,*.fennel,*.jinja2,*.jinja,*.html,*.R,*.vue,*.rst :set ts=2 sw=2 et
+	autocmd BufNewFile,BufReadPre,BufCreate *.js,*.yaml,*.yml,*.jsx,*.fnl,*.fennel,*.jinja2,*.jinja,*.html,*.R,*.vue,*.rst,*.lua,*.script :set ts=2 sw=2 et
 	autocmd BufNewFile,BufReadPre,BufCreate *.gd :set ts=3 sw=3 noet
 	autocmd FileType make :set ts=8 sw=8 noet
 	autocmd FileType fennel :set ts=2 sw=2 et fdm=marker fmr=<<<,>>> "isk-=. isk-=:
